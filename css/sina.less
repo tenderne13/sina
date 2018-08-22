@@ -1,5 +1,27 @@
-@color:green;
+@import "common/base";
 
-body{
-  background-color: @color;
+@headerH: 48px;
+@bgColor: #fff;
+@hoverColor: #fa7d3c;
+@paddingTop: 50px;
+
+.header {
+  .ps(f);
+  height: @headerH;
+  background: @bgColor;
+  width: 100%;
+  border-top: 2px solid @hoverColor;
+  box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.3), 0 0 6px 2px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.94);
+  .headerContent {
+    .ps(r);
+    width: 800px;
+    height: @headerH;
+    margin: 0 auto;
+
+  }
+}
+
+.content {
+  padding-top: @paddingTop;
 }
