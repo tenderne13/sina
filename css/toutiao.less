@@ -1,0 +1,49 @@
+@import "common/base";
+
+.reset();
+
+/* 头部 */
+@header-minWidth: 1220px;
+@header-height: 34px;
+@header-fontColor: #fff;
+@header-fontSize: 14px;
+@bgColor: #222;
+
+a {
+  color: #fff;
+  background: 0 0;
+  text-decoration: none;
+  outline: 0;
+  cursor: pointer;
+  transition: color .2s ease;
+}
+
+.tb-link {
+  padding: 0 10px;
+  border-right: white 1px solid;
+}
+
+.toutiao-header {
+  min-width: @header-minWidth;
+  height: @header-height;
+  background-color: @bgColor;
+  font-size: @header-fontSize;
+  color: @header-fontColor;
+}
+
+.topbar {
+  height: @header-height;
+  line-height: @header-height;
+}
+
+.leftbar {
+  .fl;
+  .download-app {
+    .tb-link;
+  }
+  .clearfix();
+}
+
+.rightbar {
+  .fr;
+}
