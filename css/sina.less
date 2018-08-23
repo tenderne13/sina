@@ -4,24 +4,171 @@
 @bgColor: #fff;
 @hoverColor: #fa7d3c;
 @paddingTop: 50px;
+/* 头部默认宽度 */
+@defaultHW: 1000px;
+@largeHW: 1280px;
+@smallHW: 760px;
+@logoWith: 140px;
+@defaultHWInputW: 380px;
+@inputHight: 20px;
+@activeColor: #ff8400;
 
+/* reset新浪 */
+.reset-sina();
+
+/* 背景设置 */
+body {
+  background-image: url("../image/ironman.jpg");
+  background-attachment: scroll;
+  background-position: center top;
+  background-repeat: repeat;
+  font: 12px/1.3 Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  overflow-x: hidden;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 头部样式 */
 .header {
-  .ps(f);
+  .pos(f);
   height: @headerH;
   background: @bgColor;
   width: 100%;
   border-top: 2px solid @hoverColor;
   box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.3), 0 0 6px 2px rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.94);
+  /*background: rgba(255, 255, 255, 0.94);*/
   .headerContent {
-    .ps(r);
-    width: 800px;
+    .pos(r);
+    width: @defaultHW;
     height: @headerH;
     margin: 0 auto;
+  }
+}
 
+/* log部分 */
+.sinaLogo {
+  .pos(r);
+  .fl();
+  width: @logoWith;
+  height: @headerH;
+  .l-h(@headerH);
+  .font-s(16px);
+
+  logoContain {
+    height: 48px;
+    width: 190px;
+    position: absolute;
+    left: -50px;
+  }
+
+  .logo {
+    .fl();
+    display: block;
+    width: @logoWith;
+    height: @headerH;
+    background: url("../image/logo.png") no-repeat 50% 40%;
+  }
+}
+
+/* 输入框部分 */
+.sinaInput {
+  .fl();
+  .pos(r);
+  color: #808080;
+  height: 28px;
+  margin-top: 9px;
+  width: @defaultHWInputW;
+  background-color: #f2f2f5;
+  border: 1px solid #ccc;
+  .placeholder {
+    .pos(a);
+    top: 0;
+    left: 0;
+    padding: 4px 33px 4px 10px;
+    height: 20px;
+    .l-h(20px);
+    background-color: transparent;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .searchBtn {
+    @height: 23px;
+    @width: 18px;
+    .pos(a);
+    top: 5px;
+    right: 10px;
+    height: @height;
+    width: @width;
+    line-height: @height;
+    background-image: url("../image/seaBtn.png");
+    background-repeat: no-repeat;
+  }
+}
+
+/* 右侧导航 */
+.active {
+  color: @activeColor;
+}
+
+.rigthNav {
+  .fr();
+  .a {
+    text-decoration: none;
+  }
+  height: @headerH;
+  /*line-height: @headerH;*/
+  .nav-left {
+    .fl();
+    margin: 11px 20px 11px 0px;
+    .font-s(14px);
+
+    li {
+      margin-left: 26px;
+      .fl();
+    }
+
+    i {
+      .font-s(18px);
+      margin-right: 4px;
+    }
+  }
+
+  .nav-user {
+    .fl();
+    margin: 12px 0 12px 21px;
+    border-left: 1px solid #d9d9d9;
+    li {
+      margin-left: 26px;
+      .fl();
+    }
+    i {
+      .font-s(20px)
+    }
+  }
+}
+
+/* 自适应头部 */
+@media screen and (min-width: 1295px) {
+  .header .headerContent {
+    width: @largeHW;
+  }
+
+
+}
+
+@media screen and (max-width: 1000px) {
+  .header .headerContent {
+    width: @smallHW;
+  }
+
+  .sinaInput {
+    width: 175px;
   }
 }
 
 .content {
   padding-top: @paddingTop;
+  height: 1500px;
 }
